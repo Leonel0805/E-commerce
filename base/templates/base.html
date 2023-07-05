@@ -8,7 +8,26 @@
 <body>
 
     <!-- NAVBAR -->
+    
+    <nav>
+        <ul>
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'usuarios:cerrar-sesion' %}">Cerrar Sesion</a>
+                </li>
 
+            {% else %}
+                <li>
+                    <a href="{% url 'usuarios:registro' %}">Registrarse</a>
+                </li>
+                <li>
+                    <a href="{% url 'usuarios:inicio-sesion' %}">Inicio Sesion</a>
+                </li>
+            {% endif %}
+
+
+        </ul>
+    </nav>
     <!-- CONTENT -->
     {% block content %}
     {% endblock %}
