@@ -3,7 +3,7 @@
 {% block title %} Tienda {% endblock %}
 
 {% block content %}
-    <h1>Productos</h1>
+    <h1 class="productos h1-shadow">Productos</h1>
 
     <h3>Hola {{user.username}}</h3>
 
@@ -12,12 +12,14 @@
             {% for producto in productos %}
             <div class="col-4">
 
-                <div class="card text-center" style="width: 12rem;">
+                <div class="card text-center card-fruta" style="width: 12rem;">
                     <img src="{{producto.imagen.url}}" class="card-img-top" alt="imagen de producto">
                     <div class="card-body">
                     <h5 class="card-title">{{producto.nombre}}</h5>
                     <p class="card-text">{{producto.categoria}} </p>
-                    <a href="{% url 'tienda:agregar-producto' producto.id %}" class="btn btn-success">Comprar</a>
+                    <a href="{% url 'tienda:agregar-producto' producto.id %}" class="btn btn-success">Comprar
+                        <i class="bi bi-cart-plus"></i>
+                    </a>
                     </div>
                 </div>
  
