@@ -1,0 +1,58 @@
+h1{
+    background-color: rgb(255, 149, 149);
+    color: white;
+    text-align: center;
+}
+
+
+
+.inicio{
+    background-color: rgb(255, 150, 150);
+}
+
+.productos{
+    background-color: rgb(255, 150, 150);
+}
+.inicio-sesion{
+    background-color: rgb(255, 150, 150);
+}
+
+.contenedor-sesion{
+    background-color: rgb(149, 212, 255);
+    margin: 0 auto;
+    padding: 30px 20px 15px 5px;
+    max-width: 500px;
+    border: solid rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.contenedor-registro{
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgb(186, 253, 208);
+    padding: 50px;
+    border: solid rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.carrito{
+    text-align: end;
+    /* max-width: 500px; */
+    background-color: rgb(255, 149, 149);
+    font-size: 30px;
+    margin-left: 10px;
+    /* vertical-align: middle; */
+
+}
+
+.card-fruta{
+    margin: 10px;
+}
+
+.logo{
+    max-width: 100px;
+    border-radius: 60%;
+}
+.h1-shadow{
+    text-shadow: 2px 2px 1px black;
+}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} Tienda {% endblock %}
+
+{% block content %}
+    <h1 class="productos h1-shadow">Productos</h1>
+
+    <h3>Hola {{user.username}}</h3>
+
+    <div class="container">
+        <div class="row" style="max-width: 800px; margin: 0 auto;">
+            {% for producto in productos %}
+            <div class="col-4">
+
+                <div class="card text-center card-fruta" style="width: 12rem;">
+                    <img src="{{producto.imagen.url}}" class="card-img-top" alt="imagen de producto">
+                    <div class="card-body">
+                    <h5 class="card-title">{{producto.nombre}}</h5>
+                    <p class="card-text">{{producto.categoria}} </p>
+                    <a href="{% url 'tienda:agregar-producto' producto.id %}" class="btn btn-success">Comprar
+                        <i class="bi bi-cart-plus"></i>
+                    </a>
+                    </div>
+                </div>
+ 
+            </div>
+            
+            {% endfor %}
+    
+        </div>
+
+    </div>
+
+
+    {% include 'widget-carrito.html' %}
+
+    
+    
+{% endblock %}

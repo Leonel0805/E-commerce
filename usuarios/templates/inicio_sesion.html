@@ -1,18 +1,24 @@
 {% extends 'base.html' %}
+<!-- al heredear de base no heredamos static, solo el contenido de los block -->
 
-{% block title %} {% endblock %}
+{% block title %} Inicio Sesion {% endblock %}
 
 {% block content %}
-    <h1>Inicio sesion</h1>
+    <h1 class="inicio-sesion h1-shadow">Inicio sesion</h1>
 
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-
-        <button>
-            Iniciar sesion
-        </button>
-    </form>
+    <div class="container text-center contenedor-sesion">
+        <div class="row">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+        
+                <button class="btn btn-primary">
+                    Iniciar sesion
+                </button>
+            </form>
+        
+        </div>
+    </div>
 
 
 {% endblock%}

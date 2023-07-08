@@ -15,26 +15,53 @@ class Carro():
     
     def agregar_producto(self, producto):
         producto_id = str(producto.id)
-        self.carro[producto_id]={
-            'nombre': producto.nombre
-        }
-        self.guarda_carro()
+        categoria = producto.categoria.nombre
         
-    def guarda_carro(self):
+        if producto_id not in self.carro.keys():
+            self.carro[producto_id]={
+                'nombre': producto.nombre,
+                'imagen': producto.imagen.url,
+                'categoria': categoria,
+                'cantidad':1,
+                'precio': producto.precio
+            }
+        
+        #si ya existe esa key dentro de mi self.carro.keys entonces
+        else:
+            self.carro[producto_id]['cantidad'] += 1
+            self.carro[producto_id]['precio'] += producto.precio
+        
+        self.guardar_carro()
+        
+    def guardar_carro(self):
         self.session['carro'] = self.carro
         self.session.modified = True
-        pass
+        
+    def restar_producto(self, producto):
+        producto_id = str(producto.id)
+        #if producto_id in self.carro.keys():
+        self.carro[producto_id]['cantidad'] -= 1
+        self.carro[producto_id]['precio'] -= producto.precio
+            
+        if self.carro[producto_id]['cantidad'] < 1:
+            self.eliminar_producto(producto)
+        
+        self.guardar_carro()
+        
     def eliminar_producto(self, producto):
-        self.carro.remove(producto)
-        self.guarda_carro()
+        producto_id = str(producto.id)
+        del self.carro[producto_id]
+        self.guardar_carro()
         
     def vaciar_carrito(self):
         self.carro = {}
+        self.guardar_carro()
         
     def obtener_total(self):
         total = 0
         #iteramos sobre nuestra lista
-        for producto in self.carro:
-            total += producto.precio
+        for key in self.carro.keys():
+            # print(self.carro[key]['precio'])
+            total += self.carro[key]['precio']
         return total
                 
