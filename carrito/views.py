@@ -15,15 +15,14 @@ def agregar_carrito(request, id_producto):
 def ver_carrito(request):
     
     carrito = Carro(request)
+    total = carrito.obtener_total()
+    #print(total)
     if request.method == 'GET':
         
-        print(carrito.session)
-        if 'carrito' in carrito.session:
-            print("si existe")
-        else:
-            print("no existe")
         return render(request, 'ver_carrito.html',{
-            'carrito':carrito
+            'carrito':carrito,
+            'total':total
         })
+
     
     

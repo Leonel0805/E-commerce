@@ -1,0 +1,13 @@
+
+<h1>Carrito de {{user.username}}</h1>
+
+
+    {% for key, value in request.session.carro.items %}
+        {{value.nombre}}
+        {{value.cantidad}}
+        {{value.precio}}
+        {{value.categoria}}
+        
+    {% endfor %}
+
+Total: {{total}}
