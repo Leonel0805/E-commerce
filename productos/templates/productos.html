@@ -12,8 +12,14 @@
             <li>
                 {{producto.nombre}}
                 {{producto.precio}} 
-                <img src="{{producto.imagen.url}}" alt="">
+                <img src="{{producto.imagen.url}}" alt="" width="300px">
+                
+                <a href="{% url 'carrito:agregar' producto.id %}">Agregar</a>
+
             </li>
         </ul>
     {% endfor %}
+
+    {% include 'carrito.html' %}
+    
 {% endblock %}
