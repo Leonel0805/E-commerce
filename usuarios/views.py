@@ -21,7 +21,7 @@ def registro(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('productos:productos')
+            return redirect('tienda:tienda')
         
         else:
             error = 'Error al validar los datos'
@@ -50,7 +50,7 @@ def inicio_sesion(request):
         #SI recibimos un usuario valido
         if user is not None:
             login(request, user)
-            return redirect('productos:productos')
+            return redirect('tienda:tienda')
         
         else:
             return render(request, 'inicio_sesion.html',{

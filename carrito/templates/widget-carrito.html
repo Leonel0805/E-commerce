@@ -1,13 +1,29 @@
 
-<h1>Carrito de {{user.username}}</h1>
+<div class="container">
+    <h1>Carrito de {{user.username}}</h1>
 
+    <table class="table table-striped-columns tablaconfig">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in request.session.carro.items %}
+                <tr>
+                    <td>{{forloop.counter}} </td>
+                    <td>{{value.nombre}} </td>
+                    <td>{{value.cantidad}} </td>
+                    <td>{{value.precio}} </td>
+                </tr>
+            {% endfor %}
+            <tr class="text-end">
+                <td colspan="4">Total: {{total}} </td>
+            </tr>
+        </tbody>
+    </table>
 
-    {% for key, value in request.session.carro.items %}
-        {{value.nombre}}
-        {{value.cantidad}}
-        {{value.precio}}
-        {{value.categoria}}
-        
-    {% endfor %}
-
-Total: {{total}}
+</div>

@@ -20,7 +20,7 @@ class Carro():
         if producto_id not in self.carro.keys():
             self.carro[producto_id]={
                 'nombre': producto.nombre,
-                'imagen': producto.imange.url,
+                'imagen': producto.imagen.url,
                 'categoria': categoria,
                 'cantidad':1,
                 'precio': producto.precio

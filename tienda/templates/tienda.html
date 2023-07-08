@@ -20,13 +20,18 @@
                     <a href="{% url 'tienda:agregar-producto' producto.id %}" class="btn btn-success">Comprar</a>
                     </div>
                 </div>
+ 
             </div>
             
             {% endfor %}
     
         </div>
+
     </div>
-    
+
+
     {% include 'widget-carrito.html' %}
+
+    
     
 {% endblock %}
