@@ -1,7 +1,79 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% block title %} Inicio {% endblock %}
 
 {% block content %}
     <h1 class="inicio h1-shadow">Inicio</h1>
+    
+    {% if mensaje %}
+      <div class="alert alert-success" role="alert">
+        {{mensaje}}
+      </div>
+    {% endif %}
+
+    
+    <div class="midiv">
+        
+        
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p style="text-align: center;">la mejor verduleria de zona oeste</p>
+
+        <!-- CARRUSEL -->
+        
+        <div id="carouselExampleAutoplaying" class="carousel slide carusel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'imagenes/durazno.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'imagenes/naranja.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'imagenes/uva.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <br>
+
+          <div class="container contenedor-contacto">
+            <div class="d-grid gap-2 contacto">
+              <div class="badge text-bg-primary div-contacto">
+                Contacto
+              </div>
+            </div>
+
+            <form action="" method="POST">
+              {% csrf_token %}
+              {{form.as_p}}
+
+              <button class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
+    
+        
+    </div>
+
+    <div class="contenedor-titulo"> 
+       
+            <h2 class="titulo-cont">
+                <span class="border border-end-0 border-4 borde-titulo">
+                    Verduleria MA
+                </span>
+            </h2>
+      
+    </div>
+     <br><br><br>
+
+     
+    
+    
 {% endblock %}

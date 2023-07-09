@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from productos.models import Producto
 from .carrito import Carro
 
-
+"""
 def agregar_carrito(request, id_producto):
     
     #buscamos el producto que le enviamos por url
@@ -23,6 +23,6 @@ def ver_carrito(request):
             'carrito':carrito,
             'total':total
         })
-
+"""
     
     

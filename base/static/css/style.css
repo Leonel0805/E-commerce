@@ -56,3 +56,72 @@ h1{
 .h1-shadow{
     text-shadow: 2px 2px 1px black;
 }
+
+.midiv{
+    background-image: url('../imagenes/verduleria.jpg');
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0.8;
+    position: relative;
+
+}
+
+.contedor-titulo{
+    background-color: rgb(214, 12, 12);
+
+}
+.titulo-cont{
+    
+    font-size: 5rem;
+    text-shadow: 2px 5px 2px black;
+    position: absolute;
+    color: red;
+    margin: 0 auto;
+    top: 50%; /* Ajusta la posición verticalmente según tus necesidades */
+    left: 50%; /*Ajusta la posición horizontalmente según tus necesidades */
+    transform: translate(-50%, -50%); /*Centra el div en el centro de la página */
+    background-color: rgba(255, 255, 255, 0.7); /* Color de fondo con opacidad (aquí se usa blanco semi-transparente) */
+    padding: 50px; /* Espacio de relleno para el contenido del div */
+    
+}
+
+
+
+.carusel-div{
+    max-width: 500px;
+}
+
+.carusel{
+    max-width: 700px;
+    margin: 0 auto;
+ 
+}
+
+.carousel-item img{
+    width: 500px;
+    height: 400px;
+}
+
+.borde-titulo{
+    padding: 5px;
+}
+
+.contenedor-contacto{
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgb(224, 224, 224);
+    padding: 12px 8px;
+    border: solid rgb(0, 0, 0);
+    border-radius: 20px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.contacto{
+    margin: 10px;
+}
+
+.div-contacto{
+    padding: 10px;
+    margin-bottom: 15px;
+}

@@ -23,9 +23,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('base/', include('base.urls')),
    # path('productos/', include('productos.urls')),
-    path('carrito/', include('carrito.urls')),
+   # path('carrito/', include('carrito.urls')),
     path('usuarios/', include('usuarios.urls')),
     path('tienda/', include('tienda.urls')),
+    #path('contacto/', include('contacto.urls')),
+    
    
     
     
