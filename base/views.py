@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from contacto.forms import ContactoForm
 from django.core.mail import send_mail
+from core import settings
 
 def inicio(request):
     
@@ -26,7 +27,7 @@ def inicio(request):
             send_mail(
                 subject=asunto,
                 message=mensaje,
-                from_email=email,
+                from_email=settings.EMAIL_HOST_USER,
                 recipient_list=['leoulirodriguez@gmail.com'],
                 fail_silently=False,
             )
