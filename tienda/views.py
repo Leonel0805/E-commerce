@@ -29,3 +29,9 @@ def restar_producto(request, producto_id):
     producto = Producto.objects.get(pk=producto_id)
     carro.restar_producto(producto)        
     return redirect('tienda:tienda')
+
+def vaciar_carrito(request):
+    carro = Carro(request)
+    carro.vaciar_carrito()
+    
+    return redirect('tienda:tienda')

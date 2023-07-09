@@ -39,4 +39,12 @@
         </tbody>
     </table>
 
+    {% if request.session.carro.items %}
+        <a href="{% url 'tienda:vaciar-carrito' %}">
+            <button class="btn btn-danger">
+                VACIAR CARRITO
+            </button>
+        </a>
+    {% endif %}
+
 </div>
