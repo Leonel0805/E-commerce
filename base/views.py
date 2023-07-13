@@ -23,7 +23,7 @@ def inicio(request):
             mensaje = form_request.cleaned_data['mensaje']
             
             mensaje = f"Email de: {email} \nMensaje: {mensaje}"
-            print(mensaje)
+            
             send_mail(
                 subject=asunto,
                 message=mensaje,

@@ -40,11 +40,38 @@
     </table>
 
     {% if request.session.carro.items %}
-        <a href="{% url 'tienda:vaciar-carrito' %}">
-            <button class="btn btn-danger">
-                VACIAR CARRITO
-            </button>
-        </a>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col text-end">
+                  <a href="{% url 'tienda:vaciar-carrito' %}">
+                    <button class="btn btn-danger">
+                        VACIAR CARRITO
+                    </button>
+                  </a>
+                </div>
+                <div class="col text-start">                      
+                  <a href="#" >
+                    <button class="btn btn-success boton-completar">
+                        COMPLETAR COMPRA
+                    </button>
+                  </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="">
+     
+            
+      
+            </div>
+ 
+        </div>
+
+  
     {% endif %}
+
 
 </div>
