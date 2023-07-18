@@ -14,13 +14,10 @@
 
     
     <div class="midiv">
-        
-        
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <p style="text-align: center;">la mejor verduleria de zona oeste</p>
+      
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br>
 
         <!-- CARRUSEL -->
-        
         <div id="carouselExampleAutoplaying" class="carousel slide carusel" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -44,6 +41,35 @@
           </div>
           <br>
 
+          <!-- OFERTAS -->
+          <div class="container">
+            <h1>OFERTAS</h1>
+              <div class="container">
+                <div class="row" style="max-width: 800px; margin: 0 auto;">
+                    {% for producto in productos %}
+                    <div class="col-4">
+        
+                        <div class="card text-center card-fruta" style="width: 12rem;">
+                            <img src="{{producto.imagen.url}}" class="card-img-top" alt="imagen de producto">
+                            <div class="card-body">
+                              <h5 class="card-title">{{producto.nombre}}</h5>
+                              <p class="card-text">{{producto.categoria}} </p>
+                              <a href="{% url 'tienda:agregar-producto' producto.id %}" class="btn btn-success">Comprar
+                                  <i class="bi bi-cart-plus"></i>
+                              </a>
+                              <button class="btn btn-danger position-absolute top-0 start-0 m-3">OFERTA</button>
+                            </div>
+                        </div>
+        
+                    </div>
+                    
+                    {% endfor %}
+            
+                </div>
+              </div>
+          </div>
+
+          <!-- CONTACTO -->
           <div class="container contenedor-contacto">
             <div class="d-grid gap-2 contacto">
               <div class="badge text-bg-primary div-contacto">

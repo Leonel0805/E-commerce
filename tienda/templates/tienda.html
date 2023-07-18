@@ -20,6 +20,9 @@
                     <a href="{% url 'tienda:agregar-producto' producto.id %}" class="btn btn-success">Comprar
                         <i class="bi bi-cart-plus"></i>
                     </a>
+                    {% if producto.oferta == True %}
+                        <button class="btn btn-danger position-absolute top-0 start-0 m-3">OFERTA</button>
+                    {% endif %}
                     </div>
                 </div>
  

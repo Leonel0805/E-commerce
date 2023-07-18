@@ -4,15 +4,21 @@ from django.core.mail import send_mail
 from core import settings
 from carrito.carrito import Carro
 from pedidos.views import email_pedido
+from productos.models import Producto
 
 def inicio(request):
     
+    # Formulario de Contacto
     form = ContactoForm()
     
-    #mostramos inicio con form contacto
+    # Obtenemos todos los productos con oferta
+    productos = Producto.objects.filter(oferta=True)
+    
+    # Iniciamos pagina
     if request.method == 'GET':
         return render(request, 'inicio.html', {
-            'form':form
+            'form':form,
+            'productos':productos
         })
         
     #recibimos el form

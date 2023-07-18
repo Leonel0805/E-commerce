@@ -17,7 +17,9 @@ class Producto(models.Model):
     precio = models.FloatField()
     imagen = models.ImageField(upload_to='productos')
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    oferta = models.BooleanField(default=False)
     created = models.DateField(auto_now_add=True)
+    
     
     class Meta:
         verbose_name= 'producto'
