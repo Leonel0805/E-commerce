@@ -26,6 +26,8 @@ urlpatterns = [
    # path('carrito/', include('carrito.urls')),
     path('usuarios/', include('usuarios.urls')),
     path('tienda/', include('tienda.urls')),
+    path('pedido/', include('pedidos.urls')),
+    
     #path('contacto/', include('contacto.urls')),
     
    

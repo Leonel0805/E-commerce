@@ -2,6 +2,8 @@ from django.shortcuts import render
 from contacto.forms import ContactoForm
 from django.core.mail import send_mail
 from core import settings
+from carrito.carrito import Carro
+from pedidos.views import email_pedido
 
 def inicio(request):
     
@@ -36,3 +38,20 @@ def inicio(request):
                 'mensaje':"Correo enviado correctamente!",
                 'form':form
             })
+            
+def finalizar_compra(request):
+    form = ContactoForm()
+    carro = Carro(request)
+    
+    if request.method == 'GET':
+                
+        #enviamos un mail con todo lo que tiene a una direccion de email
+        email_pedido(request)
+        
+        #vaciamos carrito despues de enviar los datos con el request
+        carro.vaciar_carrito()
+
+        return render(request, 'inicio.html',{
+            'mensaje':"Gracias por su compra",
+            'form':form
+        })

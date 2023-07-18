@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Pedido realizado</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Fruta</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for fruta in lista %}
+                <tr>
+                    <td>{{ fruta.0 }}</td>
+                    <td>{{ fruta.1 }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
