@@ -3,6 +3,7 @@ from carrito.carrito import Carro
 from .models import Pedido
 from django.core.mail import send_mail
 from core import settings
+from django.template.loader import render_to_string
 
 #importamos para renderizar archivo html con jinja
 from django.template import engines
@@ -41,7 +42,7 @@ def email_pedido(request):
     #with open('pedidos/templates/pedido_email.html', 'r') as archivo:
     
     #    html_message2 = archivo.read()
-    html_content = generar_contenido_html(request, lista)
+    html_content = render_to_string('ticket/pedido_email.html')
     
     
     #si enviamos un html_message el messge se ignora automaticamente. No se envia al email
@@ -54,9 +55,3 @@ def email_pedido(request):
         fail_silently=False,
     )
     
-def generar_contenido_html(request, lista):
-  
-    html_content = render(request, 'pedido_email.html', {
-        'lista':lista
-    }).content.decode('utf-8')
-    return html_content
